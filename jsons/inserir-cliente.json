@@ -1,0 +1,13 @@
+{
+	"nome": "Joao Da Silva",
+	"email": "joao@gmail.com",
+	"cpfOuCnpj": "032302019034",
+	"tipo": 1,
+	"telefone1": "953534927",
+	"telefone2": "9415866682",
+	"logradouro": "Rua das Amoreiras",
+	"numero": "345",
+	"complemento": "Apto 302",
+	"cep": "06730000",
+	"cidadeId": 2
+}

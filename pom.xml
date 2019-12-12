@@ -8,11 +8,11 @@
 		<version>2.2.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.viniciuscolutti.cursomc</groupId>
-	<artifactId>cursomc</artifactId>
+	<groupId>com.viniciuscolutti.moonrain</groupId>
+	<artifactId>moonrain</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cursomc</name>
-	<description>Estudo de caso Java para curso de Modelagem Conceitual com UML</description>
+	<description>The moonRain, is a app in store format with several products, for crazy people</description>
 
 	<properties>
 		<java.version>1.8</java.version>
