@@ -11,7 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.viniciuscolutti.moonrain.domain.Categoria;
+import com.viniciuscolutti.moonrain.domain.Pedido;
 import com.viniciuscolutti.moonrain.domain.Produto;
+import com.viniciuscolutti.moonrain.dto.CategoriaDTO;
 import com.viniciuscolutti.moonrain.dto.ProdutoDTO;
 import com.viniciuscolutti.moonrain.resources.utils.URL;
 import com.viniciuscolutti.moonrain.services.ProdutoService;
@@ -47,6 +51,4 @@ public class ProdutoResource {
 		
 	}
 	
-	
-		
 }
