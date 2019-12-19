@@ -7,8 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MoonRainApplication implements CommandLineRunner {
 	
-	
-	
 	public static void main(String[] args) {
 		SpringApplication.run(MoonRainApplication.class, args);
 	}
