@@ -15,11 +15,14 @@ import org.springframework.transaction.annotation.Transactional;
 import com.viniciuscolutti.moonrain.domain.Cidade;
 import com.viniciuscolutti.moonrain.domain.Cliente;
 import com.viniciuscolutti.moonrain.domain.Endereco;
+import com.viniciuscolutti.moonrain.domain.enums.Perfil;
 import com.viniciuscolutti.moonrain.domain.enums.TipoCliente;
 import com.viniciuscolutti.moonrain.dto.ClienteDTO;
 import com.viniciuscolutti.moonrain.dto.ClienteNewDTO;
 import com.viniciuscolutti.moonrain.repositories.ClienteRepository;
 import com.viniciuscolutti.moonrain.repositories.EnderecoRepository;
+import com.viniciuscolutti.moonrain.security.UserSS;
+import com.viniciuscolutti.moonrain.services.expections.AuthorizationException;
 import com.viniciuscolutti.moonrain.services.expections.DataIntegrityException;
 import com.viniciuscolutti.moonrain.services.expections.ObjectNotFoundException;
 
@@ -36,6 +39,12 @@ public class ClienteService {
 	private EnderecoRepository enderecoRepository;
 	
 	public Cliente find(Integer id) {
+		
+		UserSS user = UserService.authenticated();
+		if(user==null || !user.hasRole(Perfil.ADMIN) && !id.equals(user.getId())) {
+			throw new AuthorizationException("Acesso negado");
+		}
+		
 		Optional<Cliente> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 		"Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
