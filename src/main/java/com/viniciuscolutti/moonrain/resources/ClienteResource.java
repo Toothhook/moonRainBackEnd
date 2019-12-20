@@ -20,9 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.viniciuscolutti.moonrain.domain.Categoria;
 import com.viniciuscolutti.moonrain.domain.Cliente;
-import com.viniciuscolutti.moonrain.dto.CategoriaDTO;
 import com.viniciuscolutti.moonrain.dto.ClienteDTO;
 import com.viniciuscolutti.moonrain.dto.ClienteNewDTO;
 import com.viniciuscolutti.moonrain.services.ClienteService;
@@ -61,6 +59,14 @@ public class ClienteResource {
 	public ResponseEntity<Cliente> find(@PathVariable Integer id) {
 		
 		Cliente obj = service.find(id);
+		return ResponseEntity.ok().body(obj);
+		
+	}
+	
+	@RequestMapping(value="/email", method=RequestMethod.GET)
+	public ResponseEntity<Cliente> find(@RequestParam(value="value") String email) {
+		
+		Cliente obj = service.findByEmail(email);
 		return ResponseEntity.ok().body(obj);
 		
 	}
